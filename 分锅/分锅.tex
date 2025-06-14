@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{ctex}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\title{基于 NeRF 与 3D Gaussian Splatting 的物体重建与新视图合成：任务拆解与小组分工}
+\author{小组成员：A, B, C}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{任务要求说明}
+
+\begin{tcolorbox}[colback=gray!5, colframe=black, title=\textbf{课程项目任务要求}]
+\textbf{任务 1：基于 NeRF 的物体重建和新视图合成}
+
+基本要求：
+\begin{enumerate}
+    \item 选取身边的物体拍摄多角度图片/视频，并使用 COLMAP 估计相机参数，随后选用以下其中一种 NeRF 加速技术（如 Plenoxels、TensoRF 等）训练；
+    \item 基于训练好的 NeRF 在新的轨迹下渲染环绕物体的视频，并在预留的测试图片上评价定量结果；
+    \item 在报告中对选用的 NeRF 变体进行介绍，阐明其与原版 NeRF 的差异。
+\end{enumerate}
+
+\vspace{0.5em}
+\textbf{任务 2：基于 3D Gaussian Splatting 的物体重建和新视图合成}
+
+基本要求：
+\begin{enumerate}
+    \item 选取身边的物体拍摄多角度图片/视频，并使用 COLMAP 估计相机参数，随后使用其官方代码库训练 3D Gaussian；
+    \item 基于训练好的 3D Gaussian 在新的轨迹下渲染环绕物体的视频，并在预留的测试图片上评价定量结果；
+    \item 比较任务 1 中原版 NeRF、任务 1 NeRF 加速技术，以及 3D Gaussian Splatting 三种方法的合成结果和训练/测试效率，在报告中加入相应分析。
+\end{enumerate}
+
+\vspace{0.5em}
+\textbf{提交要求}：
+\begin{enumerate}
+    \item 提交 PDF 格式的实验报告，报告中除对模型、数据和实验结果的介绍外，还应包含用 TensorBoard 可视化的训练过程中在训练集和测试集上的 loss 曲线，以及在测试集上的 PSNR 等指标；
+    \item 报告中应提供详细的实验设置，如训练测试集划分、网络结构、batch size、learning rate、优化器、iteration、epoch、loss function、评价指标等；
+    \item 代码提交到自己的 public GitHub repo，repo 的 README 中应清晰指明如何进行训练和测试，训练好的模型权重和渲染的视频上传到百度云 / Google Drive 等网盘，实验报告内应包含实验代码所在的 GitHub repo 链接及模型权重和视频的下载地址。
+\end{enumerate}
+
+\vspace{0.5em}
+\textbf{注意事项}：
+两个任务都需完成，组队人数少于或等于 3 人（同等质量工作，少于 3 人完成有加分），实验报告由小组成员中一人提交即可。
+\end{tcolorbox}
+
+\section{项目概述}
+本项目包括两个主要任务：基于 NeRF 的物体重建与新视图合成，以及基于 3D Gaussian Splatting 的方法。每项任务均要求从多视角图像构建三维模型并生成新视角下的视频，同时进行性能评价与对比分析。
+
+\section{任务分解}
+
+\subsection*{总体工作流程}
+
+\begin{itemize}[label=--]
+    \item 数据采集：拍摄多角度物体图像或视频
+    \item COLMAP重建：估计相机位姿和稀疏点云
+    \item 任务1：基于 NeRF 及其加速技术（如 Plenoxels、TensoRF）
+    \item 任务2：基于 3D Gaussian Splatting 方法
+    \item 新视角渲染与指标评价（如 PSNR）
+    \item TensorBoard 训练曲线可视化
+    \item 实验报告撰写与代码整理（GitHub + 网盘）
+\end{itemize}
+
+\subsection*{子任务拆解表格}
+
+\begin{longtable}{|p{3cm}|p{5.5cm}|p{5.5cm}|}
+\hline
+\textbf{成员} & \textbf{主要负责内容} & \textbf{交叉协作} \\
+\hline
+成员 A & 
+\begin{itemize}[leftmargin=*]
+    \item 数据采集与预处理（视频拍摄、图像转格式）
+    \item COLMAP 相机参数重建
+    \item NeRF 训练与 TensorBoard 记录
+\end{itemize}
+&
+协助成员 B 进行 NeRF 渲染与轨迹规划 \\
+\hline
+成员 B &
+\begin{itemize}[leftmargin=*]
+    \item NeRF 加速技术实现（Plenoxels / TensoRF）
+    \item 视频渲染与 PSNR 计算
+    \item NeRF 实验部分报告撰写
+\end{itemize}
+&
+将评估结果提供给成员 C 用于对比分析 \\
+\hline
+成员 C &
+\begin{itemize}[leftmargin=*]
+    \item 实现 Gaussian Splatting 方法
+    \item 对比分析三种方法效果与效率
+    \item 撰写实验报告、整理 GitHub 与上传模型权重
+\end{itemize}
+&
+整合 A/B 的训练设置与指标结果 \\
+\hline
+\end{longtable}
+
+\section{通用子任务}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item 拍摄多角度图像或视频，确保物体无遮挡
+    \item 使用 COLMAP 生成稀疏点云与相机位姿
+    \item 划分训练/测试图片，并统一格式
+    \item 统一训练参数（batch size、learning rate、优化器等）
+    \item 用 TensorBoard 可视化 loss 曲线
+    \item 使用 PSNR、SSIM 或 LPIPS 等指标评估
+    \item 将代码上传至 GitHub，并撰写 README
+    \item 上传渲染视频与模型到网盘，提供链接
+\end{enumerate}
+
+\section{建议与注意事项}
+
+\begin{itemize}
+    \item 所有训练流程建议先跑小规模 demo（如 LEGO 数据集）验证流程正确
+    \item 建议使用 \LaTeX 或 Overleaf 协作撰写实验报告，格式规范
+    \item 每位成员应保留完整实验日志，便于结果整合
+    \item 所有训练使用统一轨迹、相同测试集，便于公平比较
+\end{itemize}
+
+\end{document}
