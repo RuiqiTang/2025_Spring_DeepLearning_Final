@@ -1,0 +1,10 @@
+torch==1.12.1
+torchvision==0.13.1
+imageio
+imageio-ffmpeg
+matplotlib
+numpy
+pillow
+scikit-image
+tensorboardX
+tqdm

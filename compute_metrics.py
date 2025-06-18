@@ -1,9 +1,6 @@
 '''
     PSNR等评价指标
 '''
-'''
-    PSNR等评价指标
-'''
 import os
 import numpy as np
 from skimage.metrics import peak_signal_noise_ratio as psnr
