@@ -74,13 +74,7 @@ tensorboard --logdir=logs/summaries
 
 ## 五、视频渲染结果
 
-<div style="display: flex; justify-content: space-between; width: 100%;">
-  <div style="width: 48%;">
-    <h3>fern_test_fresh_spiral_200000_disp</h3>
-    <img src="nerf_results/nerf_1.gif" width="100%">
-  </div>
-  <div style="width: 48%;">
-    <h3>fern_test_fresh_spiral_200000_rgb</h3>
-    <img src="nerf_results/nerf_2.gif" width="100%">
-  </div>
-</div>
+| fern_test_fresh_spiral_200000_disp | fern_test_fresh_spiral_200000_rgb |
+|------------------------------------|------------------------------------|
+| <img src="nerf_results/nerf_1.gif" width="100%"> | <img src="nerf_results/nerf_2.gif" width="100%"> |
+
