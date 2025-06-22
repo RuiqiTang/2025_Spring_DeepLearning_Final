@@ -51,26 +51,23 @@ no_reload = True
 ```bash
 tensorboard --logdir=logs/summaries
 ```
-浏览器访问 http://localhost:6006 查看训练过程。
 
 ### 2. 训练损失与PSNR曲线
-（此处插入 loss/PSNR 曲线截图）
 
-**[图片：训练损失曲线]**
+|Learning Rate| |
+|---|---|
+|<img src="pic_assets/Learning Rate.svg" width="100%"> | |
+|Loss_train|Loss_train_coarse|
+|<img src="pic_assets/Loss_train.svg" width="100%">|<img src="pic_assets/Loss_train_coarse.svg" width="100%"> |
+|PSNR_train|PSNR_train_coarse|
+|<img src="pic_assets/PSNR_train.svg" width="100%">|<img src="pic_assets/PSNR_train_coarse.svg" width="100%">|
 
-**[图片：PSNR 曲线]**
 
 ### 3. 渲染效果对比
 - 目标图像 vs. 渲染图像
 - 视差图、累积不透明度图
 
-**[图片：目标图像]**
-
-**[图片：渲染RGB图像]**
-
-**[图片：视差图]**
-
-**[图片：累积不透明度图]**
+<img src="pic_assets/nerf_images.gif" width="100%">
 
 ## 五、视频渲染结果
 
