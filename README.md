@@ -76,15 +76,11 @@ tensorboard --logdir=logs/summaries
 
 <div style="display: flex; justify-content: space-between; width: 100%;">
   <div style="width: 48%;">
-    <h3>视频1</h3>
-    <video controls width="100%" autoplay muted loop>
-      <source src="nerf_results/fern_test_fresh_spiral_200000_disp.mp4" type="video/mp4">
-    </video>
+    <h3>fern_test_fresh_spiral_200000_disp</h3>
+    <img src="nerf_results/nerf_1.gif" width="100%">
   </div>
   <div style="width: 48%;">
-    <h3>视频2</h3>
-    <video controls width="100%" autoplay muted loop>
-      <source src="nerf_results/fern_test_fresh_spiral_200000_rgb.mp4" type="video/mp4">
-    </video>
+    <h3>fern_test_fresh_spiral_200000_rgb</h3>
+    <img src="nerf_results/nerf_2.gif" width="100%">
   </div>
 </div>
