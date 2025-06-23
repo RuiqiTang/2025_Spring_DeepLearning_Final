@@ -73,5 +73,5 @@ tensorboard --logdir=logs/summaries
 
 | nerf_200000_disp | nerf_200000_rgb |
 |------------------------------------|------------------------------------|
-| <img src="nerf_results/nerf_1.gif" width="100%"> | <img src="nerf_results/nerf_2.gif" width="100%"> |
+| <img src="Output/nerf_results/nerf_1.gif" width="100%"> | <img src="Output/nerf_results/nerf_2.gif" width="100%"> |
 

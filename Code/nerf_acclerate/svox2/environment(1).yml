@@ -1,0 +1,26 @@
+name: plenoxel
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8.8
+  - numpy>=1.18.5  # 放宽限制，更兼容
+  - pip
+  - pytorch=1.11.0
+  - torchvision
+  - cudatoolkit=11.3  # 与 pytorch=1.11 匹配的 CUDA 版本
+  - tqdm
+  - scipy>=1.6.0
+  - pip:
+      - imageio
+      - imageio-ffmpeg
+      - ipdb
+      - lpips
+      - opencv-python>=4.4.0
+      - Pillow>=7.2.0
+      - pyyaml>=5.3.1
+      - tensorboard>=2.4.0
+      - pymcubes==0.1.4
+      - moviepy
+      - matplotlib
